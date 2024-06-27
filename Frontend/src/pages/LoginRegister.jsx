@@ -5,6 +5,24 @@ const LoginRegister = () => {
 
     const onSubmit = handleSubmit(data=>{
         console.log(data)
+        fetch("http://localhost:4000/login",{
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+            window.location.href = '/Dashboard'
+            
+
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
     })
     return(
         <div className="wrapper">

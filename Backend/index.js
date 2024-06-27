@@ -3,13 +3,20 @@ import { UserRepository } from './user-repository.js'
 import jwt from 'jsonwebtoken'
 import cookieParser from 'cookie-parser'
 import { SECRET_JWT_KEY } from './config.js'
+import cors from 'cors'
 
 const app = express()
 
 app.use(express.json())
+
+app.use(cors({
+  origin: 'http://localhost:5173', // Ajusta esto según tu configuración
+  credentials: true
+}))
+
 app.use(cookieParser())
 
-const PORT = process.env.PORT ?? 3000
+const PORT = process.env.PORT ?? 4000
 
 app.get('/', (req, res) => {
   res.send('hello word')
@@ -17,6 +24,7 @@ app.get('/', (req, res) => {
 
 app.post('/login', (req, res) => {
   const { username, password } = req.body
+  console.log(password)
   try {
     const user = UserRepository.login({ username, password })
     const token = jwt.sign({ id: user._id, username: user.username }, SECRET_JWT_KEY, {
@@ -49,7 +57,19 @@ app.post('/register', (req, res) => {
 app.post('/logout', (req, res) => {})
 
 app.get('/protected', (req, res) => {
-  res.render('protected', { username: 'midudev' })
+  const token = req.cookies.access_token
+  console.log(token)
+  if (!token) {
+    console.log('no hay token')
+    return res.status(403).send('access not authorized')
+  }
+  try {
+    const data = jwt.verify(token, SECRET_JWT_KEY)
+    console.log('si hay token')
+    res.json({ message: 'This is a protected route', data })
+  } catch (error) {
+    return res.status(403).send('access not authorized')
+  }
 })
 
 app.listen(PORT, () => {
