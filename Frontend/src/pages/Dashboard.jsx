@@ -1,4 +1,4 @@
-
+import Style from '../components/Css/Dashboard.module.css'
 
 const DashboardProtec = () => {
     
@@ -17,7 +17,7 @@ const DashboardProtec = () => {
         
 
     return(
-      <h1>estas burda de protegido men</h1>
+      <h1 className={Style.hola}>Verificado y protegido </h1>
     )
 }
 

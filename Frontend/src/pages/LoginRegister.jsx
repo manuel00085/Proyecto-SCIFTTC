@@ -3,9 +3,9 @@ import {useForm} from 'react-hook-form'
 const LoginRegister = () => {
     const {register, handleSubmit} = useForm()
 
-    const onSubmit = handleSubmit(data=>{
+    const onSubmit = handleSubmit(async data=>{
         console.log(data)
-        fetch("http://localhost:4000/login",{
+           fetch("http://localhost:4000/login",{
             method: 'POST',
             credentials: 'include',
             headers: {
@@ -13,8 +13,8 @@ const LoginRegister = () => {
             },
             body: JSON.stringify(data)
           })
-          .then(response => response.json())
-          .then(data => {
+          .then( response => response.json())
+          .then( data => {
             console.log('Success:', data);
             window.location.href = '/Dashboard'
             
