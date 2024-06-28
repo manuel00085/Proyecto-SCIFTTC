@@ -10,7 +10,7 @@ const app = express()
 app.use(express.json())
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Ajusta esto según tu configuración
+  origin: 'http://localhost:5173', // Frontend
   credentials: true
 }))
 

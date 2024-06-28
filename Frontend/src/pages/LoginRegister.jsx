@@ -1,5 +1,6 @@
-
+import Style from '../components/Css/Dashboard.module.css'
 import {useForm} from 'react-hook-form'
+import imagenes from '../assets/images'
 const LoginRegister = () => {
     const {register, handleSubmit} = useForm()
 
@@ -25,38 +26,54 @@ const LoginRegister = () => {
           });
     })
     return(
-        <div className="wrapper">
-            <div className="form-box login">
-                <form onSubmit={onSubmit}>
-                    <h1>Login</h1>
-                    <div className="input-box">
-                        <input type="text" 
-                        placeholder="Username" required
-                        {...register("username", {required:true})}
-                        />
-                    </div>
-                    <div className="input-box">
-                        <input type="password" 
-                        placeholder="Password" required
-                        {...register("password", {required:true})}
-                        />
-                    </div>
-                    <div className="remember-forgot">
-                        <label><input type="checkbox" />Recordar contraseña</label>
-                        <a href="#">Olvide Contraseña</a>
-                    </div>
-                    <button type="submit">Login</button>
-                    <div className="register-link">
-                        <p>No tienes Cuenta?
-                            <a href="#">Registrate</a>
-                        </p>
+        <>
+        
+        <header>
+        <div className={Style.headerGBV}>
 
-                    </div>
-                </form>
-
-            </div>
-
+        <div>
+            <img src={imagenes.img1} height="50" width="300"/>
         </div>
+        <div>
+        <img src={imagenes.img2} alt="" height="60" width="90"/>
+        </div>
+
+        </div>   
+        </header>
+
+        <main>
+        <div className={Style.sliceL}>
+        <h1>Servicio Medico FTTC</h1>
+        <div className={Style.LoginForm}>
+            <form onSubmit={onSubmit}>
+            <h2> Inicio de sesion</h2>
+            
+                <div className={Style.inputLogin}>
+                    <input type="text" 
+                    placeholder="Username" required
+                    {...register("username", {required:true})}
+                    />
+                </div>
+                <div className={Style.inputLogin}>
+                    <input type="password" 
+                    placeholder="Password" required
+                    {...register("password", {required:true})}
+                    />
+                </div>
+                <button type="submit">Login</button>
+
+            </form>
+    
+        </div>
+
+       </div>
+       <img src={imagenes.img3} alt="" />
+
+        </main>    
+    
+    </>
+
+
     )
 }
 
