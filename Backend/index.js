@@ -39,7 +39,7 @@ app.post('/login', (req, res) => {
       })
       .send({ user, token })
   } catch (error) {
-    res.status(401).send(error.message)
+    res.status(401).json({ message: error.message })
   }
 })
 
@@ -58,7 +58,6 @@ app.post('/logout', (req, res) => {})
 
 app.get('/protected', (req, res) => {
   const token = req.cookies.access_token
-  console.log(token)
   if (!token) {
     console.log('no hay token')
     return res.status(403).send('access not authorized')

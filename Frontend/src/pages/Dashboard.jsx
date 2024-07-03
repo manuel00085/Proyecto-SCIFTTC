@@ -1,25 +1,32 @@
-import Style from '../components/Css/Dashboard.module.css'
+// eslint-disable-next-line no-unused-vars
+import React, { useState } from 'react';
+import ProtectedComponent from '../components/Protected';
 
-const DashboardProtec = () => {
+
+const Dashboard = () => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleData = (responseData) => {
+    setData(responseData);
+  };
+
+  const handleError = (errorMessage) => {
     
+    setError(errorMessage);
+   
+  };
 
-        fetch("http://localhost:4000/protected",{
-            credentials: 'include',
-          })
-          .then(response => response.json())
-          .then(data => {
-            console.log('Success:', data);
-           
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
-        
+ 
 
-    return(
-      <h1 className={Style.hola}>Verificado y protegido </h1>
-    )
-}
+  return (
+    <div>   
+      <ProtectedComponent onData={handleData} onError={handleError} />
+      <h1>Dashboard</h1>
+   
+    
+    </div>
+  );
+};
 
-
-export default DashboardProtec
+export default Dashboard;

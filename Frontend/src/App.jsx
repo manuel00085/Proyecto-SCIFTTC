@@ -1,14 +1,15 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import LoginRegister from './pages/LoginRegister'
-import DashboardProtec from './pages/Dashboard'
+import Dashboard from './pages/Dashboard'
+// eslint-disable-next-line no-unused-vars
+import Classroot from './components/Css/Root.module.css'
 
 function App (){
 return(
     <BrowserRouter>
     <Routes>
         <Route path="/" element={ <LoginRegister/> } />
-        <Route path="/Register" element={<h1>Hola Register</h1> } />
-        <Route path="/Dashboard" element={<DashboardProtec/> } />  
+        <Route path="/Dashboard" element={<Dashboard/> } />  
     </Routes>
 
     

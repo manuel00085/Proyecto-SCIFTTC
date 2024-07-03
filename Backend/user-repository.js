@@ -35,10 +35,10 @@ export class UserRepository {
     Validation.password(password)
 
     const user = User.findOne({ username })
-    if (!user) throw new Error('username does not exist')
+    if (!user) throw new Error('Usuario no encontrado')
 
     const isValid = bcrypt.compareSync(password, user.password)
-    if (!isValid) throw new Error('password is invalid')
+    if (!isValid) throw new Error('Contraseña Invalida')
 
     const { password: _, ...publicUser } = user
 
@@ -48,12 +48,12 @@ export class UserRepository {
 
 export class Validation {
   static username (username) {
-    if (typeof username !== 'string') throw new Error('username must be a string')
-    if (username.length < 3) throw new Error('username must be at least 3 characters long ')
+    if (typeof username !== 'string') throw new Error('El nombre de usuario debe ser texto')
+    if (username.length < 3) throw new Error('El nombre de usuario debe tener al menos 3 caracteres')
   }
 
   static password (password) {
     if (typeof password !== 'string') throw new Error('password must be a string')
-    if (password.length < 6) throw new Error('password must be at least 6 characters long')
+    if (password.length < 6) throw new Error('La contraseña debe contener 6 caracteres como mínimo')
   }
 }

@@ -1,0 +1,100 @@
+.Lmain{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    text-rendering: optimizeLegibility;
+margin-bottom: 40px;
+
+}
+.LoginForm{
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.39);
+    width: 300px;
+    text-align: center;
+
+
+}
+.sliceL h1{
+font-weight: 400;
+}
+.inputLogin{
+    text-align: center;
+}
+.inputLogin input[type="text"],
+.inputLogin input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+
+.LoginForm button{
+
+    width: 90%;
+    padding: 6px;
+    background-color: #5c72b8;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 40px;
+
+
+}
+.LoginForm h2{
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.sliceL{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 40px;
+}
+
+
+.headerGBV{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+.Lheader{
+    margin-bottom: 30px;
+    background-color: antiquewhite;
+    margin-top: none;
+}
+
+
+footer{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ height: 80px;
+   
+}
+
+.alert{
+    
+   font-weight: 500;
+    min-height: 50px;
+    width: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
