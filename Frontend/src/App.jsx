@@ -3,6 +3,7 @@ import LoginRegister from './pages/LoginRegister'
 import Dashboard from './pages/Dashboard'
 // eslint-disable-next-line no-unused-vars
 import Classroot from './components/Css/Root.module.css'
+import './global.css';
 
 function App (){
 return(
