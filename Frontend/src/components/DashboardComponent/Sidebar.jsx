@@ -30,25 +30,25 @@ const Sidebar = () => {
         <div className="bg-primary-300 p-8 rounded-tr-[100px] h-[70vh]  flex flex-col justify-between gap-8">
           <nav className="flex flex-col gap-8">
             <a
-              href="/"
+              href="/Dashboard"
               className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-primary-900/50 transition-colors"
             >
               <RiHome3Line /> Inicio
             </a>
             <a
-              href="Agendar"
+              href="/Dashboard/Agendar"
               className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-primary-900/50 transition-colors"
             >
               <RiFileCopyLine /> Agendar
             </a>
             <a
-              href="Especialistas"
+              href="/Dashboard/Especialistas"
               className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-primary-900/50 transition-colors"
             >
               <RiWalletLine /> Doctores y especialistas
             </a>
             <a
-              href="#"
+              href="/Dashboard/Reportes"
               className="flex items-center gap-4 text-white py-2 px-4 rounded-xl hover:bg-primary-900/50 transition-colors"
             >
               <RiPieChartLine /> Reportes 

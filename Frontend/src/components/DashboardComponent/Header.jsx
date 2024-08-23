@@ -2,11 +2,11 @@ import React from "react";
 // Icons
 import { RiSearch2Line } from "react-icons/ri";
 
-const Header = () => {
+const Header = ({username}) => {
   return (
     <header className="flex flex-col md:flex-row items-center justify-between gap-4">
       <h1 className="text-2xl md:text-3xl font-bold">
-        🌞 Buen dia, <span className="text-primary-100">Manuel</span>
+        🌞 Buen dia, <span className="text-primary-100">{username}</span>
       </h1>
       <form className="w-full md:w-auto">
         <div className="relative">
