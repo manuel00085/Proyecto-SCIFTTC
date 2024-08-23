@@ -16,8 +16,8 @@ const Calendario = () => {
        <Calendar 
        localizer={localizer}
        style={{
-        height:"80vh ",
-        width:"110vh",
+        height:"70vh ",
+        width:"150vh",
        }
        }
        messages={{

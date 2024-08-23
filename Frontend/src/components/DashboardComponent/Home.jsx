@@ -1,10 +1,15 @@
+import CardTitle from "./Card-title";
+
+
+
 const Inicio = () => {
-    return (
-        <h1>hola cara de bola</h1>
+   return(
+    <CardTitle Title={"Citas Aprobadas"} Text={"5% desde la semana pasada"}/>
+   )
+}
        
 
 
-    );
-  };
+  
   
   export default Inicio;

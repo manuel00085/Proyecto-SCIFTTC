@@ -7,9 +7,10 @@ async function Autorizacion(){
         });
 
         if (!response.ok) {
+          alert("Sesion Expirada")
           setTimeout(() => {
             window.location.href = '/';
-          }, 100000);
+          }, 3000);
           
           
         }

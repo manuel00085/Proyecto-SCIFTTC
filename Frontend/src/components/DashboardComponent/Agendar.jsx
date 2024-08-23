@@ -4,7 +4,7 @@ import Calendario from './Calendario'
 
 const Agendar = () => {
     return (
-        <div className='flex justify-center mt-16'>
+        <div className='flex justify-center mt-10'>
 
                   <Calendario />
 
