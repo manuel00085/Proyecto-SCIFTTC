@@ -36,7 +36,7 @@ const Dashboard = () => {
     <Sidebar />
     <main className="lg:col-span-3 xl:col-span-5 bg-gray-100 p-8 h-[100vh] overflow-y-scroll">
     <Header username={usuario &&(usuario.data.username)}/>
-    <Outlet/>
+    <Outlet />
     </main>
 
     
