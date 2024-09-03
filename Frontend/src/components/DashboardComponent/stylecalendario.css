@@ -1,0 +1,10 @@
+/* styles.css */
+.rbc-toolbar-label {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+}
+.rbc-toolbar {
+    padding: 10px;
+}
+
