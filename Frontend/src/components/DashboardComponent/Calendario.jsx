@@ -86,7 +86,7 @@ const Calendario = () => {
   };
 
   return (
-    <div className='flex items-center justify-center font-medium	'>
+    <div className='flex justify-center font-medium w-full content-center h-full'>
 
   
         <Calendar
@@ -101,7 +101,7 @@ const Calendario = () => {
           min={dayjs('2000-01-01T08:00:00').toDate()}
           startAccessor="start"
           endAccessor="end"
-          style={{ height: '80vh', width: '160vh', padding: '7px',  border: '1px solid #ccc',  }}
+          style={{ height: '80vh', width: '100%', padding: '7px',  border: '1px solid #ccc',  }}
           messages={{
             next: 'Siguiente',
             previous: 'Anterior',

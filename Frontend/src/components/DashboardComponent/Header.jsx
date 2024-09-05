@@ -4,7 +4,7 @@ import { RiSearch2Line } from "react-icons/ri";
 
 const Header = ({username}) => {
   return (
-    <header className="flex flex-col md:flex-row items-center justify-between gap-4">
+    <header className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
       <h1 className="text-2xl md:text-3xl font-bold">
         🌞 Buen dia, <span className="text-primary-100">{username}</span>
       </h1>
