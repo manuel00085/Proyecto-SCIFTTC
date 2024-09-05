@@ -8,3 +8,23 @@
     padding: 10px;
 }
 
+
+
+.rbc-row-bg {
+    z-index: 2; /* Asegura que el fondo esté por debajo del contenido */
+}
+ 
+.rbc-row-content {
+z-index: 1; /* Mantenemos el contenido por debajo de las celdas del día */
+}  
+
+.rbc-today{
+    background-color: rgba(0, 81, 255, 0.315)
+}
+
+
+.rbc-day-bg:hover {
+    background-color: rgba(0, 123, 255, 0.2); /* Color con transparencia en el hover */
+    z-index: 2; /* Asegurar que el hover no tape los números */
+  }
+ 
