@@ -9,26 +9,26 @@ import '../global.css';
 import autorizacion from '../Api/auth';
 
 const Dashboard = () => {
-  const [usuario, setData] = useState(null); // Estado para almacenar los datos
-  const [error, setError] = useState(null); // Estado para almacenar los errores
-  const [isLoading, setIsLoading] = useState(true); // Estado para manejar la carga
+  const [usuario, setData] = useState(null); 
+  const [error, setError] = useState(null); 
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await autorizacion(); // Llamada a la función de autorización
-        setData(result); // Almacenar los datos en el estado
-        console.log('Datos:', result); // Imprimir datos en consola
+        const result = await autorizacion(); 
+        setData(result);
+        console.log('Datos:', result); 
       } catch (error) {
-        setError(error.message); // Almacenar el mensaje de error en el estado
-        console.error('Error:', error); // Imprimir error en consola
+        setError(error.message); 
+        console.error('Error:', error); 
       } finally {
-        setIsLoading(false); // Indicar que la carga ha terminado
+        setIsLoading(false); 
       }
     };
 
-    fetchData(); // Llamar a la función de fetchData cuando el componente se monte
-  }, []); // Vacío como dependencia para que se ejecute solo una vez al montar el componente
+    fetchData(); 
+  }, []); 
 
   return (
     

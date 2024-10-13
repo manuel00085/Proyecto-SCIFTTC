@@ -3,7 +3,7 @@ import { Calendar, dayjsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';
-import './stylecalendario.css';  // Asegúrate de ajustar la ruta al archivo CSS
+import './stylecalendario.css';  
 
 dayjs.locale('es');
 
@@ -24,19 +24,19 @@ const Calendario = () => {
     SpecialtyDr: '',
     Cedula: ''
   });
-  const [selectedDate, setSelectedDate] = useState(null); // Estado para el día seleccionado
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const handleSelectSlot = (slotInfo) => {
     const dayOfWeek = dayjs(slotInfo.start).day();
-    // Evitar abrir el modal en sábados (6) y domingos (0)
+  
     if (dayOfWeek !== 0 && dayOfWeek !== 6) {
       setEventData({
         ...eventData,
         start: dayjs(slotInfo.start).format('YYYY-MM-DD'),
-        time: '', // Reseteamos la hora cuando se selecciona un nuevo día
+        time: '',
       });
-      setSelectedDate(slotInfo.start); // Establecer el día seleccionado
-      setModalOpen(true); // Abrir modal cuando se hace clic en un día
+      setSelectedDate(slotInfo.start); 
+      setModalOpen(true); 
     }
   };
 
@@ -46,21 +46,21 @@ const Calendario = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes manejar la lógica para agregar el evento
+    // manejar logica del evento 
     console.log('Event Data:', eventData);
-    setModalOpen(false); // Cerrar el modal después de enviar el formulario
-    setSelectedDate(null); // Restablecer el día seleccionado al cerrar el modal
+    setModalOpen(false); 
+    setSelectedDate(null); 
   };
 
   const handleNavigate = (newDate, view, action) => {
-    // Bloquear navegación para evitar cambiar a la vista de semana o día
+    
     if (action === 'DATE' && (view === 'month' || view === 'week')) {
       return;
     }
   };
 
   const handleDrillDown = (date, view) => {
-    // Prevenir el cambio de vista al hacer clic en un día
+    
     if (view === 'day' || view === 'week') {
       return false;
     }
@@ -70,7 +70,7 @@ const Calendario = () => {
     const day = dayjs(date).day();
     const isSameDate = selectedDate && dayjs(date).isSame(selectedDate, 'day');
 
-    // Deshabilitar sábado y domingo
+    
     if (day === 0 || day === 6) {
       return {
         className: 'bg-gray-200 bg-opacity-50 text-gray-400 cursor-not-allowed ',
@@ -80,14 +80,14 @@ const Calendario = () => {
       };
     }
 
-    // Aplicar estilo especial si el día está seleccionado o en hover
+  
     if (isSameDate) {
       return {
         className: 'bg-blue-100 bg-opacity-50 text-blue-900',
       };
     }
 
-    // Aplicar efecto de hover
+
     return {
       className: 'hover:bg-blue-200 bg-opacity-50   cursor-pointer ',
     };
@@ -259,7 +259,7 @@ const Calendario = () => {
                   className="bg-red-500 text-white px-4 py-2 rounded-md mr-2"
                   onClick={() => {
                     setModalOpen(false);
-                    setSelectedDate(null); // Restablecer el día seleccionado al cerrar el modal
+                    setSelectedDate(null);
                   }}
                 >
                   Cancelar

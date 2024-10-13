@@ -18,7 +18,7 @@ const Sidebar = () => {
           showMenu ? "left-0" : "-left-full"
         }`}
       >
-        {/* Profile */}
+        {}
         <div className="flex flex-col items-center justify-center p-8 gap-2 h-[30vh]">
           <img
             src="https://unavatar.io/github/37t?fallback=https://source.boringavatars.com/marble/120/1337_user?colors=264653r,2a9d8f,e9c46a,f4a261,e76f51"
@@ -26,7 +26,7 @@ const Sidebar = () => {
           />
           <h1 className="text-xl text-white font-bold">Manuel Rincon</h1>
         </div>
-        {/* Nav */}
+        {}
         <div className="bg-primary-300 p-8 rounded-tr-[100px] h-[70vh]  flex flex-col justify-between gap-8">
           <nav className="flex flex-col gap-8">
             <a
@@ -56,7 +56,7 @@ const Sidebar = () => {
           </nav>
         </div>
       </div>
-      {/* Button mobile */}
+      {}
       <button
         onClick={() => setShowMenu(!showMenu)}
         className="lg:hidden fixed right-4 bottom-4 text-2xl bg-primary-900 p-2.5 rounded-full text-white z-50"
