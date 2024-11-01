@@ -1,4 +1,3 @@
-import Style from '../components/Css/Login.module.css'
 import {useForm} from 'react-hook-form'
 import imagenes from '../assets/images'
 // eslint-disable-next-line no-unused-vars
@@ -47,57 +46,77 @@ const LoginRegister = () => {
     return(
         <>
         
-        <header className={Style.Lheader}>
-        <div className={Style.headerGBV}>
+        <header className="p-1 bg-[#faebd7]">
+        <div className="flex  justify-between p-2">
 
-        <div>
-            <img src={imagenes.img1} height="50" width="300"/>
+        <div className='flex content-center'>
+
+            <img src={imagenes.img1} width="290"  height="70" className='pb-2'  />
         </div>
         <div>
-        <img src={imagenes.img2} alt="" height="60" width="90"/>
+        <img src={imagenes.img2} height="60" width="90"/>
         </div>
 
         </div>   
         </header>
 
-        <main className={Style.Lmain}>
-        <div className={Style.sliceL}>
-        <h1>Servicio Medico FTTC</h1>
-        <div className={Style.LoginForm}>
-            <form onSubmit={onSubmit}>
-            <h2> Inicio de sesion</h2>
+
+        <main className="xl:flex justify-between antialiased my-10 ">
+
+       <section className='w-1/2 flex justify-center content-center'>
+
+            <div className="xl:w-2/4">
+
+            <h1 className='font-bold text-center '>Servicio Medico FTTC</h1>
+
+
+                <form onSubmit={onSubmit} className='bg-[#fff] p-10 flex-col rounded-lg mt-10 shadow-2xl w-full 	'>
+
+                   <h2 className='text-xl font-bold mb-3'> Inicio de sesion</h2>
+                
+                        <div>
+
+                        <input className=" w-full p-2.5 my-2 border border-gray-300 rounded" type="text" 
+                        placeholder="Usuario" required
+                        {...register("username", {required:true})}
+                        />
+                  
+
+                  
+                        <input className=" w-full p-2.5 my-2 border border-gray-300 rounded" type="password" 
+                        placeholder="Contraseña" required
+                        {...register("password", {required:true})}
+                        />
+                            
+                        </div>
+
+                    <button className='w-1/2 p-2 bg-[#5c72b8] text-white border-none rounded mt-3 cursor-pointer' type="submit">Login</button>
+
+                    <div className="font-bolder min-h-9 w-auto mt-3 flex content-center justify-center">
+                                    {error && <div style={{ color: 'red' }}>{error}</div>}
+                                    {success && <div style={{ color: 'green' }}>Login exitoso</div>}
+
+                                    </div>
+
+                </form>
+                
+
             
-                <div className={Style.inputLogin}>
-                    <input type="text" 
-                    placeholder="Usuario" required
-                    {...register("username", {required:true})}
-                    />
                 </div>
-                <div className={Style.inputLogin}>
-                    <input type="password" 
-                    placeholder="Contraseña" required
-                    {...register("password", {required:true})}
-                    />
-                </div>
-                <button type="submit">Login</button>
 
-            </form>
-            <div className={Style.alert}>
-            {error && <div style={{ color: 'red' }}>{error}</div>}
-            {success && <div style={{ color: 'green' }}>Login exitoso</div>}
+       </section>
 
-            </div>
-
-    
-        </div>
-
-       </div>
+       <section className='w-1/2 flex justify-center content-center' >
        <img src={imagenes.img3} alt="" />
 
+       </section>
+
+
         </main>
-        <footer>
+
+        <footer className='bg-[#faebd7] min-h-20 flex justify-center content-center items-center bolder'>
             <span>Coordinacion de tecnologia FTTC</span>
-            </footer>    
+        </footer>    
     
     </>
 

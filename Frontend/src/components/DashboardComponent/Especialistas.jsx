@@ -16,21 +16,49 @@ const specialists = [
 ];
 
 const SpecialistList = () => {
+
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // manejar logica del evento 
+    console.log('Event Data:', eventData);
+    setModalOpen(false); 
+    setSelectedDate(null); 
+  };
+
+
   return (
-    <div className="max-w-screen-2xl  mx-auto bg-white shadow-md rounded-lg p-6">
+    <div className="max-w-screen-2xl mx-auto bg-white shadow-md rounded-lg p-6">
+      <div className='flex justify-between '>
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Lista de Especialistas</h2>
-      <ul className="divide-y divide-gray-200">
+      <button type="submit" className="bg-green-500 text-white p-3 rounded-md ">
+                  Nuevo
+                </button>
+        
+      </div>
+      
+      <ul className="divide-y divide-gray-200 p-3">
         {specialists.map((specialist, index) => (
-          <li key={index} className="py-3 flex justify-between items-center">
-            <div>
-              <p className="text-gray-900 font-semibold">{specialist.name}</p>
+          <li key={index} className="py-3 flex justify-between items-center group hover:bg-gray-200 p-2"> {/* Añadido 'group' aquí */}
+            <div className="flex items-center">
+              {/* Información del especialista */}
+              <p className="text-gray-900 font-semibold mr-4">{specialist.name}</p>
               <p className="text-gray-500 text-sm">{specialist.specialty}</p>
+            </div>
+            <div className="hidden group-hover:flex space-x-2"> {/* Cambiado a 'group-hover' */}
+              {/* Opciones de Editar y Eliminar (ocultas inicialmente) */}
+              <button className="text-blue-500 hover:text-blue-700">Editar</button>
+              <button className="text-red-500 hover:text-red-700">Eliminar</button>
             </div>
           </li>
         ))}
       </ul>
+
+      
+
     </div>
+
+    
   );
 };
-
 export default SpecialistList;
